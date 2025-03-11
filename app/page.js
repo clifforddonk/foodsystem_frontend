@@ -82,6 +82,9 @@ const ShoppingLandingPage = () => {
           <Link href="/shop" className="text-gray-700 hover:text-red-500">
             Shop
           </Link>
+          <Link href="/admin" className="text-gray-700 hover:text-red-500">
+            Admin
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
