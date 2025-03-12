@@ -103,7 +103,7 @@ const AdminLoginModal = ({ isOpen, onClose }) => {
               type="submit"
               className="w-full bg-[#493711] hover:bg-gray-600 text-white font-medium py-3 px-4 rounded-md transition-colors mt-4"
             >
-              {/* Login */}
+              Login
             </button>
           </form>
         </div>
