@@ -76,8 +76,12 @@ const ProductListingPage = () => {
       const query = searchQuery.toLowerCase();
       result = result.filter(
         (p) =>
-          p.name.toLowerCase().includes(query) ||
-          p.description.toLowerCase().includes(query)
+          String(p.name ?? "")
+            .toLowerCase()
+            .includes(query) ||
+          String(p.description ?? "")
+            .toLowerCase()
+            .includes(query)
       );
     }
 
@@ -243,7 +247,7 @@ const ProductListingPage = () => {
               FoodDelivery
             </h1>
           </Link>
-          <div className="relative w-full max-w-md mx-4">
+          <div className="relative w-full max-w-md mx-4  ">
             <input
               type="text"
               placeholder="Search meals..."
@@ -356,7 +360,7 @@ const ProductListingPage = () => {
                 <div className="p-4">
                   <h3 className="font-bold text-[#493711]">{product.name}</h3>
                   <p className="text-sm text-[#FBB60E] mt-2">
-                    From ${product.price.toFixed(2)}
+                    From ₵{product.price.toFixed(2)}
                   </p>
                 </div>
               </div>
@@ -490,7 +494,7 @@ const ProductListingPage = () => {
                   </div>
                   <div className="flex justify-between mb-2">
                     <span className="text-gray-600">Delivery Fee:</span>
-                    <span className="font-medium">${(5.0).toFixed(2)}</span>
+                    <span className="font-medium">${(10.0).toFixed(2)}</span>
                   </div>
                   <div className="flex justify-between font-bold text-lg">
                     <span>Total:</span>
@@ -498,7 +502,7 @@ const ProductListingPage = () => {
                       $
                       {(
                         selectedProduct.price * formData.quantity +
-                        5.0
+                        10.0
                       ).toFixed(2)}
                     </span>
                   </div>
